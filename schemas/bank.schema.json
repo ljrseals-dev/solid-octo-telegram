@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://localfirstsignal.ai/schemas/bank.schema.json",
+  "title": "Vocabulary Bank",
+  "type": "object",
+  "required": ["schema_version", "bank", "keyed_by", "values"],
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0.0" },
+    "bank": { "type": "string", "minLength": 1 },
+    "keyed_by": {
+      "type": "string",
+      "enum": ["character", "envelope", "wave", "era", "none"]
+    },
+    "values": {
+      "type": "object",
+      "additionalProperties": {
+        "oneOf": [
+          { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 }
+        ]
+      }
+    },
+    "coherence": { "type": "object" },
+    "notes": { "type": "string" }
+  },
+  "additionalProperties": false
+}

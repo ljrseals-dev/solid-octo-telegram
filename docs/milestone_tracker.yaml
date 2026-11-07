@@ -1,0 +1,330 @@
+# Machine-readable milestone tracker
+# Transpile to JSON for tooling if needed. Comments are intentional.
+program: offline-first-music-ai
+funding: "$100M post-raise"
+runway_assumption_months: 36          # flag if plan implies shorter
+board_cadence: monthly
+gate_review_cadence: biweekly
+status_values: [green, amber, red]
+
+phases:
+  - id: M0-3
+    name: Foundation
+    gate_date: "month 3"
+    exit_criteria:
+      - id: G1.1
+        text: Golden tests green on macOS, Windows, Linux in CI
+        owner: DSP Lead
+        status: pending
+      - id: G1.2
+        text: Classifier + prompt compiler run; demo bank classifications match written spec (incl. Resonant Drone -> drone)
+        owner: ML Lead
+        status: pending
+      - id: G1.3
+        text: Coherence engine enforces C1-C9 with tests
+        owner: ML Lead
+        status: pending
+      - id: G1.4
+        text: Offline installer installs and launches on clean macOS + Windows VMs with networking disabled
+        owner: Eng Manager, Platform
+        status: pending
+      - id: G1.5
+        text: DSP Lead, ML Lead, Product Lead, >=8 engineers in seats
+        owner: COO
+        status: pending
+      - id: G1.6
+        text: Marketplace/accounts offline-online decision documented and signed off
+        owner: Product Lead
+        status: pending
+    workstreams:
+      - id: ENG-DSP
+        tasks:
+          - Execute Python engine; build golden WAV harness
+          - Pin expected PCM for six demo presets
+          - CI matrix macOS/Windows/Linux
+      - id: ENG-ML
+        tasks:
+          - First run of classifier + prompt compiler
+          - Fix defects §8.1-8.5 (unreachable, shadowed, boundary, doc drift, wave collision)
+          - Add matrix features to profile (§10.3); fix §8.6
+          - Wire coherence engine; fix §8.7
+          - Time-boxed defect triage sprint (treat §8 as floor)
+      - id: ENG-PLAT
+        tasks:
+          - One-click offline installer PoC (macOS + Windows)
+          - SQLite preset library skeleton
+          - Content-addressed asset store
+      - id: PROD
+        tasks:
+          - Internal CLI + basic GUI prototype
+          - Offline/online split design decision (due end M2)
+      - id: CORP
+        tasks:
+          - Close funding
+          - Hire DSP/ML/Product leads + 8-12 engineers
+          - Stand up board reporting
+
+  - id: M4-6
+    name: Alpha
+    gate_date: "month 6"
+    exit_criteria:
+      - id: G2.1
+        text: 50 alpha creators active; >=30 producing >=1 session/week
+        owner: Head of GTM
+        status: pending
+      - id: G2.2
+        text: Preset library supports import/export, versioning, CAS dedupe
+        owner: Eng Manager, Platform
+        status: pending
+      - id: G2.3
+        text: Security audit scope agreed; threat model documented
+        owner: COO
+        status: pending
+      - id: G2.4
+        text: Prompt->audio evaluation loop running with a metric (spectral or embedding)
+        owner: ML Lead
+        status: pending
+      - id: G2.5
+        text: >=2 hardware partnership conversations in progress
+        owner: Head of BD
+        status: pending
+    workstreams:
+      - id: ENG-PLAT
+        tasks:
+          - Full preset library (SQLite + CAS)
+          - Cross-platform packaging pipeline
+          - Opt-in manual update check (no auto-phone-home)
+      - id: ENG-ML
+        tasks:
+          - Close prompt->audio loop with a metric
+          - Tune vocabulary banks against scores
+      - id: PROD
+        tasks:
+          - Alpha UX
+          - Local feedback log export (telemetry-free)
+      - id: GTM
+        tasks:
+          - Onboard 50 alpha creators
+          - Structured feedback loop
+      - id: BIZ
+        tasks:
+          - 2-3 hardware partnership targets in discussion
+      - id: CORP
+        tasks:
+          - Kick off security & privacy audit
+
+  - id: M7-9
+    name: Beta
+    gate_date: "month 9"
+    exit_criteria:
+      - id: G3.1
+        text: Public beta live; >=500 seeded creators
+        owner: Head of GTM
+        status: pending
+      - id: G3.2
+        text: Marketplace prototype demoable; offline-online split documented
+        owner: Product Lead
+        status: pending
+      - id: G3.3
+        text: Mobile architecture decision made and signed off (blocked by DSP port)
+        owner: Product Lead + DSP Lead
+        status: pending
+      - id: G3.4
+        text: First enterprise pilot contract signed
+        owner: Head of BD
+        status: pending
+      - id: G3.5
+        text: Security audit findings remediated or formally risk-accepted
+        owner: COO
+        status: pending
+    workstreams:
+      - id: ENG-DSP
+        tasks:
+          - BEGIN native DSP port (C++ or Rust) — critical path for plugin + mobile
+      - id: ENG-PLAT
+        tasks:
+          - Public beta distribution pipeline
+          - Marketplace prototype
+      - id: PROD
+        tasks:
+          - Mobile architecture decision (native vs shared core)
+      - id: GTM
+        tasks:
+          - Creator seeding program (500+ seats)
+          - Public beta launch
+      - id: BIZ
+        tasks:
+          - First enterprise pilot
+      - id: CORP
+        tasks:
+          - Complete security audit; remediation plan
+
+  - id: M10-12
+    name: "1.0"
+    gate_date: "month 12"
+    exit_criteria:
+      - id: G4.1
+        text: 1.0 shipped; paid tiers live; >=10k active creators
+        owner: CEO
+        status: pending
+      - id: G4.2
+        text: Plugin alpha runs in one host on one platform
+        owner: DSP Lead
+        status: pending
+      - id: G4.3
+        text: Native DSP engine passes same golden tests as Python on core signal path
+        owner: DSP Lead
+        status: pending
+      - id: G4.4
+        text: Series B data room ready; ARR metric defined and tracked
+        owner: COO
+        status: pending
+    workstreams:
+      - id: ENG-DSP
+        tasks:
+          - Native port parity on core signal path
+          - Plugin (VST/AU) alpha
+      - id: ENG-ML
+        tasks:
+          - Classifier + compiler v1.1 (matrix-aware, coherence-enforced, loop-closed)
+      - id: ENG-PLAT
+        tasks:
+          - Paid tiers live (entitlements validated locally after first activation)
+      - id: GTM
+        tasks:
+          - 1.0 launch
+          - 10k+ active creators
+      - id: CORP
+        tasks:
+          - Series B preparation
+
+  - id: Y2
+    name: Year 2
+    gate_date: "end of year 2"
+    exit_criteria:
+      - id: G5.1
+        text: ARR >= $5M
+        owner: CEO
+        status: pending
+      - id: G5.2
+        text: Mobile apps shipped on iOS and Android on native DSP core
+        owner: Product Lead
+        status: pending
+      - id: G5.3
+        text: Plugin versions GA (VST3, AU)
+        owner: DSP Lead
+        status: pending
+      - id: G5.4
+        text: Enterprise product GA with >=3 paying enterprise accounts
+        owner: Head of BD
+        status: pending
+      - id: G5.5
+        text: International expansion initiated (EU first)
+        owner: CEO
+        status: pending
+    workstreams:
+      - id: ENG-DSP
+        tasks: [Plugin GA]
+      - id: PROD
+        tasks: [iOS app, Android app]
+      - id: BIZ
+        tasks: [Enterprise GA, EU GTM]
+      - id: CORP
+        tasks: [International legal/tax setup]
+
+  - id: Y3
+    name: Year 3
+    gate_date: "end of year 3"
+    exit_criteria:
+      - id: G6.1
+        text: Category leadership metric defined and tracked (creator count, NPS, marketplace GMV, or share of local-first DAW workflows)
+        owner: CEO
+        status: pending
+      - id: G6.2
+        text: Hardware reference design shipped with >=1 partner
+        owner: Head of BD
+        status: pending
+      - id: G6.3
+        text: Profitability path modeled and board-approved
+        owner: COO
+        status: pending
+      - id: G6.4
+        text: Strategic options memo delivered (acquisition, merger, IPO readiness)
+        owner: CEO
+        status: pending
+    workstreams:
+      - id: BIZ
+        tasks: [Hardware reference design with partner]
+      - id: CORP
+        tasks: [Profitability model, strategic options memo]
+
+# Cross-cutting workstreams (always active)
+cross_cutting:
+  - id: ENG-DSP
+    owner: DSP Lead
+    note: Critical path for plugin + mobile via native port (starts M7)
+  - id: ENG-ML
+    owner: ML Lead
+  - id: ENG-PLAT
+    owner: Eng Manager, Platform
+  - id: PROD
+    owner: Product Lead
+  - id: GTM
+    owner: Head of GTM
+  - id: BIZ
+    owner: Head of BD
+  - id: CORP
+    owner: COO / Chief of Staff
+
+# Risks
+risks:
+  - id: R1
+    text: "$100M implies 30-36mo runway at planned headcount; plan may burn faster"
+    owner: COO
+    trigger: "Monthly burn vs. plan"
+    mitigation: "Model burn by phase; hold hiring to gate criteria, not schedule"
+  - id: R2
+    text: "Hiring 4 leads + 8-12 engineers in 90 days"
+    owner: COO
+    trigger: "Offer-accept rate below plan"
+    mitigation: "Pre-committed offers before close; contractor bridge"
+  - id: R3
+    text: "Python DSP will not run on mobile or as real-time plugin"
+    owner: DSP Lead
+    trigger: "Plugin alpha slips"
+    mitigation: "Start native port M7; budget 2 senior native engineers"
+  - id: R4
+    text: "Cross-platform float determinism breaks golden tests"
+    owner: DSP Lead
+    trigger: "CI flake macOS vs. Windows"
+    mitigation: "Fixed-point or deterministic float discipline; per-platform baselines"
+  - id: R5
+    text: "Marketplace/paid/enterprise imply online services that contradict C1"
+    owner: Product Lead
+    trigger: "Design review at M2"
+    mitigation: "Explicit offline-online split; local entitlement validation"
+  - id: R6
+    text: "Unverified code (paper §8.9) hides more defects than §8.1-8.7"
+    owner: ML Lead
+    trigger: "First run of classifier"
+    mitigation: "Time-boxed defect triage sprint in M0-1; treat §8 as floor"
+  - id: R7
+    text: "Prompt->audio loop (paper §8.8) never validated"
+    owner: ML Lead
+    trigger: "Alpha feedback contradictory"
+    mitigation: "Close loop in Alpha with a metric, not vibes"
+  - id: R8
+    text: "Security audit surfaces no-network violation"
+    owner: COO
+    trigger: "Audit at M4-6"
+    mitigation: "Pre-audit self-check in M3; enforce C4 with source-tree test in CI"
+  - id: R9
+    text: "Hardware partnership distracts from software roadmap"
+    owner: Head of BD
+    trigger: "First partnership LOI"
+    mitigation: "Partner-led reference designs only; no first-party manufacturing"
+  - id: R10
+    text: "Series B story depends on ARR that depends on plugin + mobile"
+    owner: CEO
+    trigger: "M10-12 ARR trajectory"
+    mitigation: "Define ARR components early; track leading indicators"

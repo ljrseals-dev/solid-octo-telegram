@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "bank": "ERA_TAGS",
+  "keyed_by": "era",
+  "values": {
+    "lo-fi analog": ["1970s", "tape-era", "vintage", "eight-track", "pre-digital"],
+    "acid analog": ["1980s", "303-era", "warehouse-era", "chicago-era", "early-house"],
+    "analog": ["classic analog", "timeless", "no-era marker", "mid-century"]
+  },
+  "coherence": {
+    "lofi_drums": ["cr-78", "analog drum machine", "brushed kit", "no drums"],
+    "acid_era_production": ["overdriven", "filtered", "dry", "saturated", "gritty"],
+    "era_production_exclusions": {
+      "lo-fi analog": ["hi-fi", "wide stereo", "clean"],
+      "acid analog": ["clean", "orchestral"]
+    }
+  },
+  "notes": "keyed_by era. lofi_drums feeds rule C1; acid_era_production feeds C2; era_production_exclusions are filtered before the production-tag draw."
+}

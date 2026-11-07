@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "bank": "GENRE_BY_CHARACTER",
+  "keyed_by": "character",
+  "values": {
+    "bass": ["synthwave", "darkwave", "ebm", "deep house", "trap", "drill", "techno", "dub"],
+    "acid": ["acid house", "acid techno", "acid trance", "electro", "breakbeat", "psytrance"],
+    "perc": ["industrial", "breakcore", "idm", "experimental", "tribal techno", "glitch hop"],
+    "glitch": ["idm", "glitch", "breakcore", "experimental", "vaporwave", "deconstructed club"],
+    "ambient": ["ambient", "drone ambient", "new age", "field recording", "lowercase", "space music"],
+    "pad": ["synthwave", "cinematic", "ambient pop", "dream pop", "chillout", "progressive house"],
+    "drone": ["drone", "dark ambient", "doom", "minimalism", "ritual ambient", "sound art"],
+    "bell": ["ambient", "neoclassical", "cinematic", "idm", "chillout", "new age"],
+    "theremin": ["exotica", "sci-fi soundtrack", "lounge", "experimental", "space age pop", "horror"],
+    "formant": ["electro", "funk", "synth-funk", "talkbox soul", "idm", "experimental"],
+    "strings": ["cinematic", "neoclassical", "synthwave", "baroque pop", "post-rock", "ambient"],
+    "brass": ["jazz fusion", "cinematic", "funk", "synthwave", "orchestral", "ska"],
+    "pluck": ["synthwave", "chiptune", "folktronica", "idm", "k-pop", "future bass"],
+    "sub": ["dub", "trap", "drill", "dubstep", "phonk", "bass house"],
+    "arp": ["synthwave", "trance", "chiptune", "italo disco", "techno", "krautrock"],
+    "lead": ["synthpop", "synthwave", "electro", "arena rock", "eurodance", "chiptune"],
+    "hoover": ["rave", "hardcore", "jungle", "happy hardcore", "breakbeat hardcore", "techno"],
+    "fx": ["sound design", "industrial", "horror soundtrack", "experimental", "field recording", "dark ambient"]
+  },
+  "coherence": {
+    "low_tempo_subset": {
+      "sub": ["dub", "trap", "drill", "phonk"]
+    },
+    "exclusive_pairs": [
+      ["ambient", "hardcore"],
+      ["drone ambient", "drill"],
+      ["drone", "hardcore"],
+      ["new age", "breakcore"]
+    ],
+    "drone_excluded_genres": ["hardcore", "drill", "happy hardcore", "breakbeat hardcore"],
+    "ambient_excluded_genres": ["hardcore", "drill", "breakcore"]
+  },
+  "notes": "Six to eight genres per character. exclusive_pairs are mutually exclusive tag draws (rule C8). drone_excluded_genres / ambient_excluded_genres feed rule C6."
+}

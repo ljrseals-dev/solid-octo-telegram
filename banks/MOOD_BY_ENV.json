@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "bank": "MOOD_BY_ENV",
+  "keyed_by": "envelope",
+  "values": {
+    "padded": ["ethereal", "floating", "serene", "expansive", "weightless", "glacial"],
+    "percussive": ["punchy", "tight", "dry", "snapping", "relentless", "mechanical"],
+    "plucky": ["crisp", "snappy", "staccato", "bright", "nimble", "tight"],
+    "droning": ["hypnotic", "meditative", "vast", "ominous", "static", "eternal"],
+    "stabbing": ["urgent", "aggressive", "sharp", "driving", "forceful", "insistent"],
+    "sustained": ["warm", "steady", "soulful", "determined", "glowing", "patient"]
+  },
+  "coherence": {
+    "bpm_mood_conflicts": {
+      "below_70": ["relentless", "urgent", "aggressive", "driving"],
+      "above_140": ["glacial", "weightless", "eternal", "patient", "meditative"]
+    }
+  },
+  "notes": "bpm_mood_conflicts feeds rule C3 extension: tempo-incompatible moods are filtered before draw."
+}

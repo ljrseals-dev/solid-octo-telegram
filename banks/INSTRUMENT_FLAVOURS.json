@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "bank": "INSTRUMENT_FLAVOURS",
+  "keyed_by": "none",
+  "values": {
+    "all": [
+      "with tr-808 drums", "with tr-909 drums", "with cr-78 drums",
+      "with linn drum", "with analog drum machine", "with brushed kit",
+      "with hand percussion", "with breakbeat", "with taiko", "with tabla",
+      "with no drums", "with sub bass", "with arpeggiated bass",
+      "with string pad", "with brass stab", "with bell layer"
+    ]
+  },
+  "coherence": {
+    "tags": {
+      "with tr-808 drums": ["percussive", "four_on_floor"],
+      "with tr-909 drums": ["four_on_floor"],
+      "with cr-78 drums": ["lofi"],
+      "with linn drum": ["lofi", "1980s"],
+      "with analog drum machine": ["lofi"],
+      "with brushed kit": ["acoustic", "low_bpm"],
+      "with hand percussion": ["organic"],
+      "with breakbeat": ["high_bpm"],
+      "with taiko": ["cinematic"],
+      "with tabla": ["organic", "high_bpm"],
+      "with no drums": ["ambient", "drone", "non_percussive"],
+      "with sub bass": ["bass", "sub"],
+      "with arpeggiated bass": ["arp"],
+      "with string pad": ["strings", "padded"],
+      "with brass stab": ["brass", "stabbing"],
+      "with bell layer": ["bell"]
+    },
+    "percussive_exclusions": ["with no drums", "with string pad"],
+    "droning_exclusions": ["with tr-808 drums", "with tr-909 drums", "with breakbeat", "with taiko", "with hand percussion"]
+  },
+  "notes": "tags maps each flavour to trait tags used by the coherence engine. droning_exclusions feeds rule C4."
+}

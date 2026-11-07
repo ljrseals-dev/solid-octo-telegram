@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "local-first-signal"
+version = "0.1.0"
+description = "Offline-first generative music AI — deterministic DSP + semantic prompt compiler"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "Local-First Signal Team"}
+]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "soundfile>=0.12",
+    "typer[all]>=0.9",
+    "rich>=13.0",
+    "pydantic>=2.0",
+    "sqlalchemy>=2.0",
+    "onnxruntime>=1.16",
+]
+
+[project.optional-dependencies]
+gui = ["dearpygui>=1.10"]
+dev = ["pytest>=7.0", "pytest-cov", "jsonschema", "black", "ruff", "mypy"]
+
+[project.scripts]
+lfs = "lfs.ui.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

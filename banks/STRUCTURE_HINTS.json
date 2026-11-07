@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "bank": "STRUCTURE_HINTS",
+  "keyed_by": "none",
+  "values": {
+    "all": [
+      "intro-verse-chorus", "loop-based", "through-composed", "build-drop",
+      "slow burn", "aaba", "drone with evolution", "four on the floor",
+      "ambient bloom", "call and response", "ostinato-driven", "free form"
+    ]
+  },
+  "coherence": {
+    "tags": {
+      "intro-verse-chorus": ["song_form"],
+      "loop-based": ["repetitive"],
+      "through-composed": ["non_repetitive"],
+      "build-drop": ["high_energy"],
+      "slow burn": ["low_energy"],
+      "aaba": ["song_form"],
+      "drone with evolution": ["non_percussive", "ambient"],
+      "four on the floor": ["four_on_floor", "high_energy"],
+      "ambient bloom": ["non_percussive", "ambient"],
+      "call and response": ["organic"],
+      "ostinato-driven": ["repetitive"],
+      "free form": ["non_repetitive"]
+    },
+    "envelope_exclusions": {
+      "percussive": ["ambient bloom", "drone with evolution", "slow burn"],
+      "stabbing": ["ambient bloom", "drone with evolution", "slow burn"],
+      "droning": ["build-drop", "four on the floor", "intro-verse-chorus"],
+      "padded": ["four on the floor", "build-drop"]
+    }
+  },
+  "notes": "envelope_exclusions feeds rule C5. Keep these in data, not code."
+}

@@ -1,0 +1,7 @@
+[
+  "tests/test_banks.py::test_bank_prompts_deterministic",
+  "tests/test_banks.py::test_banks_validate_against_schema",
+  "tests/test_determinism.py::test_different_seed_changes_audio",
+  "tests/test_determinism.py::test_prompt_determinism",
+  "tests/test_determinism.py::test_render_determinism"
+]

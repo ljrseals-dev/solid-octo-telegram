@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "bank": "TEMPO_BY_CHARACTER",
+  "keyed_by": "character",
+  "values": {
+    "bass": [95, 140],
+    "acid": [120, 150],
+    "perc": [90, 160],
+    "glitch": [110, 180],
+    "ambient": [50, 80],
+    "pad": [60, 100],
+    "drone": [40, 70],
+    "bell": [60, 90],
+    "theremin": [70, 110],
+    "formant": [90, 125],
+    "strings": [60, 100],
+    "brass": [90, 140],
+    "pluck": [100, 140],
+    "sub": [60, 90],
+    "arp": [120, 150],
+    "lead": [100, 140],
+    "hoover": [150, 180],
+    "fx": [50, 120]
+  },
+  "coherence": {
+    "drum_bpm_gates": {
+      "four_on_floor_min_bpm": 70,
+      "breakbeat_min_bpm": 90,
+      "brushed_kit_max_bpm": 110
+    }
+  },
+  "notes": "values are [min_bpm, max_bpm] integer pairs, inclusive. drum_bpm_gates feeds rule C3."
+}

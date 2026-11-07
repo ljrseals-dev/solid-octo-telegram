@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "bank": "LYRIC_BANKS",
+  "keyed_by": "none",
+  "values": {
+    "verse_lines": [
+      "no signal in the wire but the room still sings",
+      "every patch a promise every seed a home",
+      "the machine keeps a heartbeat when the network is gone",
+      "static on the glass and a lamp that will not fade",
+      "i keep the loop inside me where the cold cannot reach"
+    ],
+    "chorus_lines": [
+      "offline let the loop run free",
+      "a private little universe that only listens to me",
+      "warm against the cold",
+      "the song stays inside me when the world goes quiet"
+    ]
+  },
+  "coherence": {
+    "exclusive_pairs": [
+      ["the network is gone", "signal in the wire"]
+    ]
+  },
+  "notes": "Two verse lines + one chorus line are drawn per prompt when --with-lyrics is set."
+}

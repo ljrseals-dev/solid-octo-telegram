@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "bank": "PRODUCTION_TAGS",
+  "keyed_by": "none",
+  "values": {
+    "all": [
+      "tape-saturated", "glued", "bit-crushed", "warm", "wide stereo",
+      "mono-compatible", "spring reverb", "plate reverb", "cavernous reverb",
+      "dry", "compressed", "sidechained", "lo-fi", "hi-fi", "overdriven",
+      "filtered", "saturated", "gritty", "clean", "roomy"
+    ]
+  },
+  "coherence": {
+    "exclusive_pairs": [
+      ["dry", "cavernous reverb"],
+      ["dry", "roomy"],
+      ["lo-fi", "hi-fi"],
+      ["clean", "gritty"],
+      ["wide stereo", "mono-compatible"]
+    ],
+    "audio_rate_mod_adds": ["filtered", "overdriven"],
+    "audio_rate_mod_removes": ["dry", "clean"]
+  },
+  "notes": "Rule C8 uses exclusive_pairs. Rule C9 uses audio_rate_mod_adds/removes when profile.matrix.audio_rate_mod is true."
+}

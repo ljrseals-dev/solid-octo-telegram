@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "bank": "TITLE_BANKS",
+  "keyed_by": "none",
+  "values": {
+    "adjectives": ["molten", "static", "local", "hollow", "amber", "silent", "wired", "distant"],
+    "nouns": ["circuit", "signal", "engine", "matrix", "lattice", "oscillator", "archive", "relay"],
+    "places": ["basement", "outpost", "station", "workshop", "terminal", "chapel"],
+    "times": ["midnight", "dawn", "winter", "second shift", "off-hours"],
+    "verbs": ["holds", "drifts", "renders", "listens", "waits"],
+    "abstracts": ["memory", "resilience", "privacy", "warmth", "distance"],
+    "numbers": ["1", "2", "3", "4", "5", "7", "9", "13"],
+    "templates": [
+      "{adjective} {noun} #{number}",
+      "{noun} in the {place}",
+      "{abstract} at {time}",
+      "the {noun} that {verb}",
+      "{adjective} {abstract}"
+    ]
+  },
+  "coherence": {},
+  "notes": "Template placeholders must resolve against the pools above."
+}

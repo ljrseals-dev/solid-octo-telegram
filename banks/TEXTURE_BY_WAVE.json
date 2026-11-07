@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "bank": "TEXTURE_BY_WAVE",
+  "keyed_by": "wave",
+  "values": {
+    "sine": ["pure", "round", "hollow", "smooth", "flute-like", "clear"],
+    "saw": ["buzzing", "rich", "harmonic", "fat", "analog", "cutting"],
+    "square": ["hollow", "reedy", "woody", "biting", "retro", "nasal"],
+    "triangle": ["mellow", "soft", "glassy", "flute-like", "gentle", "airy"],
+    "noise": ["hissing", "granular", "dusty", "abrasive", "washed", "textural"]
+  },
+  "coherence": {
+    "exclusive_pairs": [
+      ["smooth", "abrasive"],
+      ["gentle", "biting"],
+      ["fat", "airy"]
+    ]
+  },
+  "notes": "exclusive_pairs prevent contradictory timbre words in one prompt (rule C8)."
+}
